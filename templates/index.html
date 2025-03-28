@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Ice Breaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .summary {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🔍 Enter a name to get their LinkedIn Summary</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="e.g., Eden Marco" required />
+        <input type="submit" value="Generate Summary" />
+    </form>
+
+    {% if summary %}
+    <div class="summary">
+        <h3>📝 AI-Generated Summary:</h3>
+        <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
